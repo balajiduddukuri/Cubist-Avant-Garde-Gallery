@@ -17,6 +17,8 @@ export interface AuctionData {
   endTime: number;
   /** Pseudonym of the AI artist persona */
   artistName: string;
+  /** Pseudonym of the current highest bidder */
+  highestBidder: string;
 }
 
 /**

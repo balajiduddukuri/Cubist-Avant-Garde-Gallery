@@ -69,7 +69,12 @@ export const ArtModal: React.FC<ArtModalProps> = ({ piece, onClose, theme }) => 
                    <span className="text-lg opacity-50">Ξ</span>
                    {piece.auction.currentBid.toFixed(2)}
                 </div>
-                <div className="text-xs opacity-50 mt-1">$ {(piece.auction.currentBid * 2450).toLocaleString()}</div>
+                <div className="flex flex-col gap-0.5 mt-1">
+                  <span className="text-xs opacity-50">$ {(piece.auction.currentBid * 2450).toLocaleString()}</span>
+                  <span className="text-[10px] uppercase tracking-wide opacity-70 font-medium text-blue-500 truncate">
+                    Highest: {piece.auction.highestBidder}
+                  </span>
+                </div>
              </div>
              <div className={`p-6 ${isDark ? 'bg-[#1a1a1f]' : 'bg-white'}`}>
                 <span className="block text-xs uppercase tracking-wider opacity-50 mb-1">Auction Ends</span>
@@ -105,8 +110,8 @@ export const ArtModal: React.FC<ArtModalProps> = ({ piece, onClose, theme }) => 
              </p>
 
              <h4 className="font-bold text-sm uppercase tracking-wider mb-2 opacity-70">Prompt DNA</h4>
-             <div className={`text-xs p-3 rounded leading-relaxed font-mono ${isDark ? 'bg-black/30 text-neutral-400' : 'bg-neutral-100 text-neutral-600'}`}>
-                {piece.prompt.substring(0, 150)}...
+             <div className={`text-xs p-3 rounded leading-relaxed font-mono max-h-48 overflow-y-auto ${isDark ? 'bg-black/30 text-neutral-400' : 'bg-neutral-100 text-neutral-600'}`}>
+                {piece.prompt}
              </div>
           </div>
 

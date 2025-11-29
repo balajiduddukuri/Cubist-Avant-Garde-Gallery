@@ -135,6 +135,15 @@ export const ARTIST_NAMES = [
 ];
 
 /**
+ * Fictional Bidder personas for the auction metadata.
+ */
+export const BIDDER_NAMES = [
+  "0xWhale...4a21", "CryptoMedici", "Vault_7", "Anon_Collector", 
+  "EtherBaron", "NFT_Mogul", "Gallery_Fund", "Meta_Investor",
+  "Pixel_Vanguard", "Chain_Patron", "Art_DAO", "Satoshi_Dreams"
+];
+
+/**
  * The master prompt template used for Gemini generation.
  * Contains placeholders [SUBJECT] and [PALETTE] for dynamic replacement.
  */

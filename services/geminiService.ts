@@ -1,7 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
 import { ArtPiece, GenerationParams, AuctionData } from "../types";
-import { BASE_PROMPT_TEMPLATE, PERIODS, ARTIST_NAMES } from "../constants";
+import { BASE_PROMPT_TEMPLATE, PERIODS, ARTIST_NAMES, BIDDER_NAMES } from "../constants";
 
 /**
  * Calls the Google Gemini API to generate a Cubist artwork based on the provided parameters.
@@ -73,6 +73,7 @@ export const generateArtPiece = async (params: GenerationParams): Promise<ArtPie
     const endTime = Date.now() + (Math.floor(Math.random() * 46) + 2) * 60 * 60 * 1000;
     
     const randomArtist = ARTIST_NAMES[Math.floor(Math.random() * ARTIST_NAMES.length)];
+    const randomBidder = BIDDER_NAMES[Math.floor(Math.random() * BIDDER_NAMES.length)];
 
     const auctionData: AuctionData = {
         currentBid,
@@ -81,7 +82,8 @@ export const generateArtPiece = async (params: GenerationParams): Promise<ArtPie
         likes,
         rating,
         endTime,
-        artistName: randomArtist
+        artistName: randomArtist,
+        highestBidder: randomBidder
     };
 
     return {

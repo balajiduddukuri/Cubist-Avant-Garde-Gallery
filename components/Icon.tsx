@@ -23,7 +23,8 @@ import {
   Star,
   Timer,
   TrendingUp,
-  Activity
+  Activity,
+  Info
 } from 'lucide-react';
 
 /**
@@ -53,5 +54,6 @@ export const Icons = {
   Star,
   Timer,
   TrendingUp,
-  Activity
+  Activity,
+  Info
 };
